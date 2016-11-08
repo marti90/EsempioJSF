@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+   <h:head>
+       
+   </h:head>
+   
+   <h:body>
+       
+   <h1>Menu' a Tendina</h1>
+   <br/>
+       <h:form>
+           <h:inputText value="#{c.citta}"/>
+           <h:selectOneMenu value="#{c.citta}">
+<!--                <f:selectItem itemValue="Torino" itemLabel="TO"></f:selectItem> -->
+<!--                <f:selectItem itemValue="Milano" itemLabel="MI"></f:selectItem> -->
+<!--                <f:selectItem itemValue="Roma" itemLabel="RM"></f:selectItem> -->
+
+                    <f:selectItems value="#{c.cities}"></f:selectItems>
+           </h:selectOneMenu>
+           
+           <h:commandButton value="Scegli la Citta'" action="HomeCliente"></h:commandButton>
+       </h:form>
+       
+   <br/>
+   
+   <h1>Radio Button</h1>
+   <br></br>
+       <h:form>
+           
+           <h:selectOneRadio value="#{c.squadra}">
+
+                    <f:selectItems value="#{c.squadre}"></f:selectItems>
+                    
+           </h:selectOneRadio>
+           
+           <h:commandButton value="Scegli la Squadra" action="HomeCliente"></h:commandButton>
+       </h:form>
+       
+       <br></br>
+   
+    <h1>Check Box</h1>
+    <br></br>
+        <h:form>
+           
+           <h:selectManyCheckbox value="#{c.squadreScelte}">
+
+                    <f:selectItems value="#{c.squadre}"></f:selectItems>
+                    
+           </h:selectManyCheckbox>
+           
+           <h:commandButton value="Scegli la Squadra'" action="HomeCliente"></h:commandButton>
+       </h:form>
+       
+   </h:body>
+</html>
