@@ -25,8 +25,8 @@
                     requiredMessage="Questo campo e' obbligatorio"
                     /> 
                     
-                    <h:message for="username" styleClass="colori"/>
-                    <br/>
+                   <h:message for="username" styleClass="colori"/>
+                   <br/>
          Password: <h:inputSecret id="password" value="#{utente.password}"/><br/>
          Eta':     <h:inputText id="eta" 
                    value="#{utente.eta}"
@@ -37,7 +37,22 @@
                    
                    <h:message for="eta" styleClass="colori"/>
                    <br/>
-         
+         Telefono: <h:inputText id="cellulare"
+                   value="#{utente.cellulare}"
+                   label="Cellulare"
+                   validatorMessage="Il cellulare deve essere in questo formato: xxx-xxxxxxx"
+                   >
+                       <f:validateRegex pattern="\d{3}-\d{7}"/>
+                   </h:inputText>
+                   <h:message for="cellulare" styleClass="colori"/>
+                   <br/>
+   Codice Fiscale: <h:inputText id="codiceFiscale"
+                   value="#{utente.codiceFiscale}"
+                   label="CodFiscale"
+                   validator="#{utente.validazioneCodFiscale}"
+                   />
+                   <h:message for="codiceFiscale" styleClass="colori"></h:message>
+         <br/>
          <h:commandButton value="Entra" action="HomeCliente"/>
       
       </h:form>
